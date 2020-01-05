@@ -1,0 +1,40 @@
+git命令暂时笔记处：
+// 将当前目录(工作区: working directory)创建为: 版本库/仓库repository
+$ git init
+
+// 向版本库添加文件 或 添加修改: git add <file>
+$ git add readme.txt
+
+未被add的修改都只存在于working directory中, 被add后进入stage
+
+// 将暂存区(stage)里的修改提交到版本库: git commit -m <message>
+$ git commit -m "add readme.txt"
+
+经过commit stage后, 所有修改被提交到repository
+
+// 查看当前版本库的状态: git status
+$ git status
+
+// 查看文件最近的修改: git diff <file>
+//  修改提交到repository后，无法查看
+$ git diff readme.txt
+
+// 查看文件相对于repository中的所有修改: git diff HEAD -- <file>
+//  修改提交到repository后，无法查看
+$ git diff HEAD -- readme.txt
+
+// 查看commit log, 从最近到最远: git log
+//  参数 --pretty=oneline 显示精简日志
+$ git log [--pretty=oneline]
+
+// 版本回退: git reset --hard HEAD^
+//  其中 HEAD^ 表示上个版本, HEAD^^ 表示上上个版本, HEAD~100 表示第100个版本
+$ git reset --hard HEAD^
+
+// 查看每一条对于repository的命令: git reflog
+//  可以查看所有的commit ID, 实现来回穿越
+$ git reflog
+
+// 版本'向前'回退: git reset --hard <commit id>
+$ git reset --hard 5465a
+
