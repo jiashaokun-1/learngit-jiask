@@ -39,3 +39,18 @@ $ git reflog
 // 版本'向前'回退: git reset --hard <commit id>
 $ git reset --hard 5465a
 
+// 撤销修改: git checkout -- <file>
+//  一种是file未被add, 命令可将file的修改撤销, file回到repository中的版本
+//  一种是file已被add(在stage中), 但working directory中有了新的修改, 
+//   命令仅将working directory中的修改撤销, file回到stage中的版本
+//  也可撤销对file的rm(删除): 前提file是还存在于repository中
+$ git checkout -- readme.txt
+
+// 撤销动作: git restore <file>
+//  撤销file在working directory中的所有修改, file回到repository中的版本
+$ git restore readme.txt
+
+// 撤销动作: git restore --staged <file>
+//  撤销对file的add, file在working directory中的所有修改都仍然存在
+$ git restore --staged readme.txt
+
