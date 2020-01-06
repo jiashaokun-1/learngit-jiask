@@ -28,6 +28,7 @@ $ git diff HEAD -- readme.txt
 $ git log [--pretty=oneline]
 
 // 版本回退: git reset --hard HEAD^
+//  HEAD也可用commit id直接表示
 //  其中 HEAD^ 表示上个版本, HEAD^^ 表示上上个版本, HEAD~100 表示第100个版本
 $ git reset --hard HEAD^
 
