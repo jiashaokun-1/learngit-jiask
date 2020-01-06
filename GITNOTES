@@ -54,3 +54,13 @@ $ git restore readme.txt
 //  撤销对file的add, file在working directory中的所有修改都仍然存在
 $ git restore --staged readme.txt
 
+// 工作区working directory删除file: rm <file>
+//  file仍存在于repository, 可通过 git checkout -- <file> 撤销对file的删除
+$ rm test.txt
+
+// 仓库repository删除file: git rm <file>
+//  git rm <file>后, 若未commit, 则可通过: 
+//  git restore --staged <file>和git checkout -- <file>抵消git rm <file>的所有影响
+$ git rm test.txt
+$ git commit -m "delete test.txt"
+
